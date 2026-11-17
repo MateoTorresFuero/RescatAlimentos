@@ -15,6 +15,9 @@ import {
   RegistrationPage,
   RegistrationSelectionPage,
 } from './components/PublicAccessPages.jsx'
+import PublicarLotePage from './components/PublicarLotePage.jsx'
+import ComedorDashboardPage from './components/ComedorDashboardPage.jsx'
+import { LotesProvider } from './context/LotesContext.jsx'
 import './App.css'
 
 function LandingPage() {
@@ -63,6 +66,9 @@ function AppLayout() {
         <Route element={<LoginPage />} path="/login" />
         <Route element={<RegistrationSelectionPage />} path="/registro" />
         <Route element={<RegistrationPage />} path="/registro/:role" />
+        <Route element={<PublicarLotePage />} path="/donante/publicar-lote" />
+        <Route element={<ComedorDashboardPage />} path="/comedor/dashboard" />
+        <Route element={<ComedorDashboardPage />} path="/comedor/lote/:id" />
         <Route element={<NotFoundPage />} path="*" />
       </Routes>
       <SiteFooter onJoin={() => navigate('/registro')} />
@@ -73,7 +79,9 @@ function AppLayout() {
 function App() {
   return (
     <BrowserRouter>
-      <AppLayout />
+      <LotesProvider>
+        <AppLayout />
+      </LotesProvider>
     </BrowserRouter>
   )
 }

@@ -1306,9 +1306,365 @@
   line-height: 1.5;
 }
 
+.prototipo-page .access-heading {
+  margin-bottom: 24px;
+}
+
+.prototipo-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 auto 28px;
+}
+
+.prototipo-nav .button,
+.lote-ver-detalle {
+  min-height: 42px;
+  font-size: 16px;
+}
+
+.prototipo-button-secondary {
+  color: var(--teal);
+  background: var(--white);
+  border-color: var(--teal);
+}
+
+.prototipo-button-secondary:hover {
+  color: var(--white);
+  background: var(--teal);
+}
+
+.publicar-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
+  align-items: start;
+  gap: 24px;
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+
+.prototipo-panel,
+.prototipo-preview,
+.lote-detalle-panel {
+  padding: clamp(22px, 3vw, 36px);
+  background: var(--white);
+  border-top: 3px solid var(--orange);
+}
+
+.prototipo-panel h2,
+.lote-detalle-contenido h2 {
+  margin: 0 0 8px;
+  color: var(--teal);
+  font-family: var(--heading-font);
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.prototipo-panel .form-panel-intro {
+  margin-bottom: 22px;
+}
+
+.lote-form {
+  display: grid;
+  gap: 16px;
+}
+
+.lote-campo {
+  display: grid;
+  gap: 7px;
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.lote-campo input,
+.lote-campo select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  color: var(--teal);
+  background: var(--white);
+  border: 1px solid #c8d3d5;
+  border-radius: 0;
+  font-size: 14px;
+}
+
+.lote-campo input[type='file'] {
+  padding: 8px;
+}
+
+.lote-campo [aria-invalid='true'] {
+  border-color: #b42318;
+}
+
+.lote-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.lote-checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--teal);
+}
+
+.lote-ayuda {
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.field-error,
+.form-error-summary,
+.prototipo-storage-error {
+  color: #8f1d14;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.form-error-summary,
+.prototipo-storage-error {
+  margin: 0 auto 20px;
+  padding: 12px 14px;
+  background: #fff1ef;
+  border-left: 3px solid #b42318;
+}
+
+.prototipo-storage-error {
+  width: min(100%, 1120px);
+}
+
+.prototipo-preview > .eyebrow {
+  margin-bottom: 16px;
+}
+
+.lotes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  width: min(100%, 1180px);
+  margin: 0 auto;
+}
+
+.lote-card {
+  overflow: hidden;
+  background: var(--white);
+  border-top: 3px solid var(--orange);
+}
+
+.lote-card > img,
+.lote-detalle-panel > img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  background: #edf2f1;
+}
+
+.lote-imagen-vacia {
+  display: grid;
+  min-height: 160px;
+  place-items: center;
+  padding: 16px;
+  color: #52696e;
+  background: #edf2f1;
+  font-family: var(--heading-font);
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.lote-preview-card .lote-imagen-vacia {
+  min-height: 210px;
+}
+
+.lote-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px;
+}
+
+.lote-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.lote-badge,
+.lote-origen {
+  display: inline-block;
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.lote-badge {
+  padding: 5px 8px;
+  background: #edf4f3;
+}
+
+.lote-card-content h2 {
+  margin: 0;
+  color: var(--teal);
+  font-family: var(--heading-font);
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.lote-distancia {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.lote-peso {
+  margin: 0;
+  color: var(--orange);
+  font-family: var(--heading-font);
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.lote-detalles {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  margin: 0;
+}
+
+.lote-detalles > div {
+  display: grid;
+  grid-template-columns: minmax(90px, 0.7fr) minmax(0, 1.3fr);
+  gap: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.lote-detalles dt {
+  color: var(--text);
+}
+
+.lote-detalles dd {
+  margin: 0;
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.lote-origen {
+  color: #64777a;
+}
+
+.lote-ver-detalle {
+  width: 100%;
+  margin-top: auto;
+  font-size: 15px;
+  text-align: center;
+}
+
+.lote-detalle-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 28px;
+  width: min(100%, 960px);
+  margin: 0 auto;
+}
+
+.lote-detalle-panel > img,
+.lote-detalle-panel > .lote-imagen-vacia {
+  height: 100%;
+  min-height: 300px;
+}
+
+.lote-detalle-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.lote-detalles-amplios > div {
+  grid-template-columns: minmax(130px, 0.7fr) minmax(0, 1.3fr);
+  font-size: 14px;
+}
+
+.lote-reservado {
+  margin: 0;
+  padding: 12px;
+  color: var(--teal);
+  background: #edf4f3;
+  border-left: 3px solid var(--orange);
+  font-size: 14px;
+}
+
+.prototipo-back-link {
+  margin-top: 0;
+  color: var(--teal);
+  text-decoration: underline;
+}
+
+.prototipo-empty {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: 24px;
+  color: var(--teal);
+  background: var(--white);
+  text-align: center;
+}
+
 @media (max-width: 1050px) {
   .navigation-wrap {
     gap: 20px;
+  }
+
+  @media (max-width: 900px) {
+    .publicar-layout,
+    .lote-detalle-panel {
+      grid-template-columns: 1fr;
+      width: min(100%, 620px);
+    }
+
+    .lotes-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .lote-detalle-panel > img,
+    .lote-detalle-panel > .lote-imagen-vacia {
+      height: 240px;
+      min-height: 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .prototipo-nav {
+      align-items: stretch;
+      flex-direction: column;
+      width: min(100%, 420px);
+    }
+
+    .prototipo-nav .button {
+      width: 100%;
+    }
+
+    .lotes-grid {
+      grid-template-columns: 1fr;
+      width: min(100%, 420px);
+    }
+
+    .lote-detalles > div {
+      grid-template-columns: minmax(90px, 0.8fr) minmax(0, 1.2fr);
+    }
   }
 
   .brand {
