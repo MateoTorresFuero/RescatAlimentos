@@ -1,0 +1,411 @@
+@media (max-width: 1050px) {
+  .navigation-wrap {
+    gap: 20px;
+  }
+
+  @media (max-width: 900px) {
+    .publicar-layout,
+    .lote-detalle-panel {
+      grid-template-columns: 1fr;
+      width: min(100%, 620px);
+    }
+
+    .lotes-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .lote-detalle-panel > img,
+    .lote-detalle-panel > .lote-imagen-vacia {
+      height: 240px;
+      min-height: 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .prototipo-nav {
+      align-items: stretch;
+      flex-direction: column;
+      width: min(100%, 420px);
+    }
+
+    .prototipo-nav .button {
+      width: 100%;
+    }
+
+    .lotes-grid {
+      grid-template-columns: 1fr;
+      width: min(100%, 420px);
+    }
+
+    .lote-detalles > div {
+      grid-template-columns: minmax(90px, 0.8fr) minmax(0, 1.2fr);
+    }
+  }
+
+  .brand {
+    flex-basis: 210px;
+  }
+
+  .brand img {
+    height: 130px;
+  }
+
+  .main-navigation {
+    gap: 17px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .button-donate {
+    padding-inline: 18px;
+  }
+}
+
+@media (max-width: 850px) {
+  .topbar-inner,
+  .navigation-wrap,
+  .footer-cta,
+  .footer-columns,
+  .footer-bottom {
+    width: min(100% - 40px, 720px);
+  }
+
+  .navigation-wrap {
+    min-height: 120px;
+    justify-content: space-between;
+  }
+
+  .brand {
+    flex-basis: 190px;
+  }
+
+  .brand img {
+    height: 112px;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 9px;
+    background: transparent;
+    border: 1px solid #cbd6d7;
+    cursor: pointer;
+  }
+
+  .mobile-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--teal);
+  }
+
+  .main-navigation {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 20px 20px;
+    background: var(--white);
+    box-shadow: 0 12px 20px rgb(0 59 73 / 12%);
+  }
+
+  .main-navigation.is-open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 13px 4px;
+    border-bottom: 1px solid #e9eeee;
+  }
+
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .dropdown-panel {
+    position: static;
+    min-width: 0;
+    padding: 4px 8px 8px;
+    border-top: 0;
+    border-bottom: 1px solid #e9eeee;
+    box-shadow: none;
+  }
+
+  .dropdown-panel a {
+    padding: 10px 8px;
+  }
+
+  .button-donate {
+    align-self: flex-start;
+    width: auto;
+    margin-top: 14px;
+  }
+
+  .hero-section {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  }
+
+  .hero-copy {
+    padding: 46px 32px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(40px, 6.4vw, 60px);
+  }
+
+  .hero-image-wrap,
+  .hero-image {
+    min-height: 450px;
+  }
+
+  .help-grid {
+    gap: 20px;
+  }
+
+  .problem-section {
+    grid-template-columns: minmax(0, 1.1fr) minmax(220px, 0.9fr);
+    gap: 32px;
+  }
+
+  .registration-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .impact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .faq-layout {
+    gap: 38px;
+  }
+
+  .instagram-section {
+    grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1.35fr);
+  }
+
+  .instagram-content {
+    padding-right: 28px;
+  }
+
+  .footer-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px;
+  }
+}
+
+@media (max-width: 620px) {
+  .topbar-inner,
+  .navigation-wrap,
+  .footer-cta,
+  .footer-columns,
+  .footer-bottom {
+    width: min(100% - 32px, 500px);
+  }
+
+  .topbar-inner {
+    min-height: 42px;
+    font-size: 11px;
+  }
+
+  .topbar-inner > p {
+    max-width: 185px;
+    line-height: 1.35;
+  }
+
+  .account-actions {
+    gap: 6px;
+  }
+
+  .account-actions button {
+    min-height: 28px;
+    padding: 4px 9px;
+    font-size: 10px;
+  }
+
+  .navigation-wrap {
+    min-height: 100px;
+  }
+
+  .brand {
+    flex-basis: 165px;
+  }
+
+  .brand img {
+    height: 94px;
+  }
+
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-copy {
+    padding: 48px 24px 42px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(43px, 12vw, 62px);
+  }
+
+  .hero-tagline {
+    margin-top: 19px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-image-wrap,
+  .hero-image {
+    min-height: 320px;
+    max-height: 430px;
+  }
+
+  .section-padding {
+    padding: 55px 22px 58px;
+  }
+
+  .section-heading {
+    margin-bottom: 27px;
+  }
+
+  .help-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    width: min(100%, 410px);
+  }
+
+  .problem-section {
+    grid-template-columns: 1fr;
+    padding-inline: 22px;
+  }
+
+  .registration-grid,
+  .platform-views-grid {
+    grid-template-columns: 1fr;
+    width: min(100%, 410px);
+  }
+
+  .form-page-layout {
+    grid-template-columns: 1fr;
+    width: min(100%, 500px);
+  }
+
+  .role-form {
+    grid-template-columns: 1fr;
+  }
+
+  .role-form > .button,
+  .role-form > .form-message {
+    grid-column: auto;
+  }
+
+  .process-grid,
+  .participant-grid {
+    grid-template-columns: 1fr;
+    width: min(100%, 410px);
+  }
+
+  .process-card {
+    min-height: 0;
+  }
+
+  .participant-card {
+    min-height: 230px;
+  }
+
+  .help-card h3 {
+    margin-bottom: 12px;
+  }
+
+  .help-card img {
+    aspect-ratio: 1.6;
+  }
+
+  .impact-section {
+    padding: 52px 22px;
+  }
+
+  .impact-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 30px;
+  }
+
+  .impact-number {
+    font-size: 56px;
+  }
+
+  .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .instagram-section {
+    grid-template-columns: 1fr;
+  }
+
+  .instagram-photo,
+  .instagram-photo img {
+    min-height: 210px;
+    max-height: 260px;
+  }
+
+  .instagram-photo {
+    clip-path: none;
+  }
+
+  .instagram-content {
+    padding: 34px 22px 40px;
+  }
+
+  .footer-cta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+    padding-top: 40px;
+    padding-bottom: 34px;
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-brand a {
+    width: 180px;
+  }
+
+  .footer-bottom {
+    font-size: 11px;
+  }
+
+  .auth-dialog {
+    padding: 34px 24px 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

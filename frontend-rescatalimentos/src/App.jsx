@@ -20,7 +20,12 @@ import ComedorDashboardPage from './components/ComedorDashboardPage.jsx'
 import LogisticaDashboardPage from './components/LogisticaDashboardPage.jsx'
 import AdminDashboardPage from './components/AdminDashboardPage.jsx'
 import { LotesProvider } from './context/LotesContext.jsx'
-import './App.css'
+import './styles/site.css'
+import './styles/access.css'
+import './styles/landing.css'
+import './styles/auth-dialog.css'
+import './styles/prototype.css'
+import './styles/responsive.css'
 
 function LandingPage() {
   const navigate = useNavigate()

@@ -1,0 +1,88 @@
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  padding: 24px;
+  background: rgb(0 27 33 / 68%);
+}
+
+.auth-dialog {
+  position: relative;
+  width: min(100%, 460px);
+  padding: 38px;
+  background: var(--white);
+  box-shadow: 0 24px 70px rgb(0 0 0 / 25%);
+}
+
+.dialog-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  color: var(--teal);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.auth-dialog h2 {
+  margin: 0 0 8px;
+  color: var(--teal);
+  font-family: var(--heading-font);
+  font-size: 38px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.dialog-intro {
+  margin: 0 0 23px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.auth-form {
+  display: grid;
+  gap: 15px;
+}
+
+.auth-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.auth-form input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  color: var(--teal);
+  background: var(--white);
+  border: 1px solid #c8d3d5;
+  border-radius: 0;
+  font-size: 15px;
+}
+
+.auth-submit {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.form-message {
+  margin: 0;
+  padding: 10px 12px;
+  color: var(--teal);
+  background: #edf4f3;
+  border-left: 3px solid var(--orange);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
