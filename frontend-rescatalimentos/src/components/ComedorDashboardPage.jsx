@@ -28,12 +28,25 @@ function NavegacionPrototipo({ detalle = false }) {
   )
 }
 
-function DetalleLote({ lote, reservarLote, errorPersistencia }) {
+function DetalleLote({
+  lote,
+  reservarLote,
+  solicitarApoyoLogistico,
+  errorPersistencia,
+}) {
   const [reservado, setReservado] = useState(false)
+  const [mostrarOpcionesMovilidad, setMostrarOpcionesMovilidad] = useState(false)
+  const [apoyoLogisticoSolicitado, setApoyoLogisticoSolicitado] = useState(false)
 
   function reservar() {
     reservarLote(lote.id)
     setReservado(true)
+  }
+
+  function solicitarTransporte() {
+    solicitarApoyoLogistico(lote)
+    setReservado(true)
+    setApoyoLogisticoSolicitado(true)
   }
 
   return (
@@ -86,13 +99,39 @@ function DetalleLote({ lote, reservarLote, errorPersistencia }) {
           <p className="lote-origen">Datos de prueba · Ubicación aproximada ficticia</p>
           {reservado && (
             <p className="form-message" role="status">
-              Reserva confirmada en este prototipo. El lote ya no aparece entre los disponibles.
+              {apoyoLogisticoSolicitado
+                ? 'Reserva confirmada. La solicitud sintética de transporte ya está disponible para el voluntario.'
+                : 'Reserva confirmada en este prototipo. El lote ya no aparece entre los disponibles.'}
             </p>
           )}
           {lote.estado === 'DISPONIBLE' ? (
-            <button className="button button-primary" onClick={reservar} type="button">
-              Aceptar y reservar lote
-            </button>
+            mostrarOpcionesMovilidad ? (
+              <div className="reserva-opciones">
+                <p>¿Cómo recogerá el lote el comedor?</p>
+                <button
+                  className="button button-primary"
+                  onClick={reservar}
+                  type="button"
+                >
+                  Usar movilidad propia
+                </button>
+                <button
+                  className="button prototipo-button-secondary"
+                  onClick={solicitarTransporte}
+                  type="button"
+                >
+                  Solicitar apoyo de transporte
+                </button>
+              </div>
+            ) : (
+              <button
+                className="button button-primary"
+                onClick={() => setMostrarOpcionesMovilidad(true)}
+                type="button"
+              >
+                Aceptar y reservar lote
+              </button>
+            )
           ) : !reservado ? (
             <p className="lote-reservado" role="status">
               Este lote ya está reservado y no está disponible para otra reserva.
@@ -109,7 +148,12 @@ function DetalleLote({ lote, reservarLote, errorPersistencia }) {
 
 function ComedorDashboardPage() {
   const { id } = useParams()
-  const { lotes, reservarLote, errorPersistencia } = useLotes()
+  const {
+    lotes,
+    reservarLote,
+    solicitarApoyoLogistico,
+    errorPersistencia,
+  } = useLotes()
 
   if (id) {
     const lote = lotes.find((elemento) => elemento.id === id)
@@ -131,6 +175,7 @@ function ComedorDashboardPage() {
         errorPersistencia={errorPersistencia}
         lote={lote}
         reservarLote={reservarLote}
+        solicitarApoyoLogistico={solicitarApoyoLogistico}
       />
     )
   }

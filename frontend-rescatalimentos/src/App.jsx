@@ -1,4 +1,5 @@
 import { BrowserRouter, Link, Route, Routes, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 import Header from './components/Header.jsx'
 import HeroSection from './components/HeroSection.jsx'
 import ProblemSection from './components/ProblemSection.jsx'
@@ -6,7 +7,6 @@ import HowWeHelp from './components/HowWeHelp.jsx'
 import ImpactSection from './components/ImpactSection.jsx'
 import ProcessSection from './components/ProcessSection.jsx'
 import ParticipateSection from './components/ParticipateSection.jsx'
-import PlatformViewsSection from './components/PlatformViewsSection.jsx'
 import FaqSection from './components/FaqSection.jsx'
 import InstagramSection from './components/InstagramSection.jsx'
 import SiteFooter from './components/SiteFooter.jsx'
@@ -17,6 +17,8 @@ import {
 } from './components/PublicAccessPages.jsx'
 import PublicarLotePage from './components/PublicarLotePage.jsx'
 import ComedorDashboardPage from './components/ComedorDashboardPage.jsx'
+import LogisticaDashboardPage from './components/LogisticaDashboardPage.jsx'
+import AdminDashboardPage from './components/AdminDashboardPage.jsx'
 import { LotesProvider } from './context/LotesContext.jsx'
 import './App.css'
 
@@ -31,7 +33,6 @@ function LandingPage() {
       <ProcessSection />
       <ImpactSection />
       <ParticipateSection />
-      <PlatformViewsSection />
       <FaqSection />
       <InstagramSection />
     </main>
@@ -55,20 +56,37 @@ function NotFoundPage() {
 
 function AppLayout() {
   const navigate = useNavigate()
+  const [sesionDemo, setSesionDemo] = useState(null)
+
+  function iniciarSesionDemo(cuenta) {
+    setSesionDemo(cuenta.identidad)
+  }
+
+  function cerrarSesionDemo() {
+    setSesionDemo(null)
+    navigate('/', { replace: true })
+  }
 
   return (
     <>
       <Header
+        sesionActiva={Boolean(sesionDemo)}
         onAuth={(mode) => navigate(mode === 'login' ? '/login' : '/registro')}
+        onLogout={cerrarSesionDemo}
       />
       <Routes>
         <Route element={<LandingPage />} path="/" />
-        <Route element={<LoginPage />} path="/login" />
+        <Route
+          element={<LoginPage onLogin={iniciarSesionDemo} />}
+          path="/login"
+        />
         <Route element={<RegistrationSelectionPage />} path="/registro" />
         <Route element={<RegistrationPage />} path="/registro/:role" />
         <Route element={<PublicarLotePage />} path="/donante/publicar-lote" />
         <Route element={<ComedorDashboardPage />} path="/comedor/dashboard" />
         <Route element={<ComedorDashboardPage />} path="/comedor/lote/:id" />
+        <Route element={<LogisticaDashboardPage />} path="/logistica/dashboard" />
+        <Route element={<AdminDashboardPage />} path="/admin/usuarios" />
         <Route element={<NotFoundPage />} path="*" />
       </Routes>
       <SiteFooter onJoin={() => navigate('/registro')} />
