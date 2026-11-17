@@ -1324,6 +1324,18 @@
   font-size: 16px;
 }
 
+.reserva-opciones {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+}
+
+.reserva-opciones p {
+  margin: 0;
+  color: var(--teal);
+  font-weight: 600;
+}
+
 .prototipo-button-secondary {
   color: var(--teal);
   background: var(--white);
@@ -1450,6 +1462,204 @@
   gap: 20px;
   width: min(100%, 1180px);
   margin: 0 auto;
+}
+
+.rutas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 20px;
+  width: min(100%, 1180px);
+  margin: 0 auto;
+}
+
+.ruta-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: clamp(22px, 3vw, 32px);
+  background: var(--white);
+  border-top: 3px solid var(--orange);
+}
+
+.ruta-card h2 {
+  margin: 0;
+  color: var(--teal);
+  font-family: var(--heading-font);
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.ruta-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.ruta-estado {
+  padding: 5px 9px;
+  color: var(--teal);
+  background: #edf4f3;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ruta-estado-asignada {
+  color: #155b32;
+  background: #e6f4ea;
+}
+
+.ruta-detalles {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.ruta-detalles div {
+  display: grid;
+  gap: 3px;
+}
+
+.ruta-detalles dt {
+  color: var(--text);
+  font-size: 12px;
+}
+
+.ruta-detalles dd {
+  margin: 0;
+  color: var(--teal);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ruta-card .button {
+  width: 100%;
+  min-height: 42px;
+  font-size: 16px;
+}
+
+.ruta-card .lote-origen {
+  margin-top: auto;
+}
+
+.admin-metricas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 18px;
+  width: min(100%, 1180px);
+  margin: 0 auto 30px;
+}
+
+.admin-metrica {
+  display: grid;
+  gap: 10px;
+  padding: 22px 24px;
+  background: var(--white);
+  border-top: 3px solid var(--orange);
+}
+
+.admin-metrica span {
+  color: var(--text);
+  font-size: 13px;
+}
+
+.admin-metrica strong {
+  color: var(--teal);
+  font-family: var(--heading-font);
+  font-size: 34px;
+}
+
+.admin-solicitudes {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+}
+
+.admin-solicitudes-heading {
+  margin-bottom: 18px;
+}
+
+.admin-solicitudes-heading h2 {
+  margin: 0;
+  color: var(--teal);
+  font-family: var(--heading-font);
+  font-size: clamp(24px, 3vw, 32px);
+  text-transform: uppercase;
+}
+
+.admin-solicitudes-heading p {
+  margin: 8px 0 0;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.admin-solicitudes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 18px;
+}
+
+.admin-solicitud {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding: 22px;
+  background: var(--white);
+  border-top: 3px solid var(--orange);
+}
+
+.admin-solicitud-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.admin-solicitud-heading h3 {
+  margin: 10px 0 0;
+  color: var(--teal);
+  font-family: var(--heading-font);
+  font-size: 20px;
+}
+
+.admin-solicitud > p {
+  margin: 0;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.admin-estado {
+  flex: 0 0 auto;
+  padding: 5px 9px;
+  color: var(--teal);
+  background: #edf4f3;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.admin-estado-aprobada {
+  color: #155b32;
+  background: #e6f4ea;
+}
+
+.admin-estado-rechazada {
+  color: #8f1d14;
+  background: #fff1ef;
+}
+
+.admin-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.admin-acciones .button {
+  min-height: 40px;
+  font-size: 15px;
 }
 
 .lote-card {

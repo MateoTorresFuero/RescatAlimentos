@@ -90,7 +90,7 @@ function Dropdown({ id, label, links, onNavigate }) {
   )
 }
 
-function Header({ onAuth }) {
+function Header({ onAuth, sesionActiva, onLogout }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   function closeMobileMenu() {
@@ -103,12 +103,20 @@ function Header({ onAuth }) {
         <div className="topbar-inner">
           <p>Juntos rescatamos alimentos y cuidamos nuestro planeta.</p>
           <div className="account-actions">
-            <button type="button" onClick={() => onAuth('signup')}>
-              Crear cuenta
-            </button>
-            <button type="button" onClick={() => onAuth('login')}>
-              Iniciar sesión
-            </button>
+            {sesionActiva ? (
+              <button type="button" onClick={onLogout}>
+                Cerrar sesión
+              </button>
+            ) : (
+              <>
+                <button type="button" onClick={() => onAuth('signup')}>
+                  Crear cuenta
+                </button>
+                <button type="button" onClick={() => onAuth('login')}>
+                  Iniciar sesión
+                </button>
+              </>
+            )}
           </div>
         </div>
       </div>

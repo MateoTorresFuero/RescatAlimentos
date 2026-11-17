@@ -28,7 +28,6 @@ function ParticipateSection() {
               {role.action}
               <span aria-hidden="true">→</span>
             </Link>
-            <span className="route-label">Ruta: {role.route}</span>
           </article>
         ))}
       </div>
